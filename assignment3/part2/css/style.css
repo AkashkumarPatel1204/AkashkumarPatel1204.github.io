@@ -1,102 +1,135 @@
-*/
+/* --------------------------------------------------
+   FONTS
+-------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Oswald:wght@400;600&display=swap');
-
-
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Merriweather", serif; 
-  line-height: 1.5;
-  letter-spacing: 0.03rem;
+  font-family: "Merriweather", serif;
+  background-color: #ffffff;
+  line-height: 1.6;
   font-size: 1rem;
 }
 
-
-
-h1, h2 {
-  font-family: "Oswald", sans-serif; 
-  letter-spacing: 0.08rem;
+/* --------------------------------------------------
+   PAGE LAYOUT
+-------------------------------------------------- */
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 2rem 3rem;
 }
 
-h1 {
+/* Right column contains: Top Courses + Navigation */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+header {
+  background-color: #ffffff;
+  padding: 2rem 0;
   text-align: center;
-  font-size: 2.2rem;
-  margin-top: 1rem;
+  border-bottom: 4px solid #003366;
 }
 
+header h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.8rem;
+  margin: 0;
+  letter-spacing: 0.08rem;
+  color: #000;
+}
+
+/* --------------------------------------------------
+   SECTION HEADINGS
+-------------------------------------------------- */
 h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0; 
+  font-family: "Oswald", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #000;
 }
 
-
+/* First paragraph after each heading */
 section h2 + p {
   text-indent: 2rem;
 }
 
-/
-
-a {
-  color: #004080; 
-  text-decoration: underline;
-  outline: none; 
-  position: relative;
-}
-
-
-a[href^="http"]:after {
-  content: "↗";
-  font-size: 0.7em;
-  margin-left: 4px;
-  position: relative;
-  top: -1px;
-}
-
-a:hover,
-a:focus {
-  color: #008000; 
-  text-decoration: none; 
-}
-
-
-
-ul, ol {
+/* --------------------------------------------------
+   PARAGRAPHS
+-------------------------------------------------- */
+p {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-  line-height: 1.5;
+  color: #333;
 }
 
-ul {
-  list-style-type: square; 
+/* --------------------------------------------------
+   SIDEBAR BOX (Top Courses)
+-------------------------------------------------- */
+aside {
+  background-color: #f7f7f7;
+  padding: 1.2rem;
+  border: 2px solid #003366;
+  border-radius: 4px;
 }
 
+aside h2 {
+  margin-top: 0;
+}
 
+aside ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
 
+/* --------------------------------------------------
+   NAVIGATION MENU
+-------------------------------------------------- */
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 0;
 }
 
 nav li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 
 nav a {
-  display: block; 
+  display: block;
   background-color: #003366;
   color: white;
-  padding: 0.75rem;
+  padding: 0.9rem;
   text-align: center;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
   letter-spacing: 0.1rem;
   border-radius: 4px;
+  text-decoration: none;
 }
 
 nav a:hover {
   background-color: #0055aa;
-  color: white;
+}
+
+/* --------------------------------------------------
+   LINKS (Body Text)
+-------------------------------------------------- */
+a {
+  color: #004080;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #008000;
   text-decoration: none;
 }
