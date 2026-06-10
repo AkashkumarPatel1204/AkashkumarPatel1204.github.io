@@ -1,55 +1,67 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: white;
-  color: #333333;
-  margin: 0;
-  font: 1.2em / 1.6 sans-serif;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-  border: 1px solid black;
-}
-
-.logo {
-  font-size: 200%;
-  padding: 50px 20px;
-  margin: 0 auto;
-  max-width: 980px;
-}
-
-.grid {
-  margin: 0 auto;
-  max-width: 980px;
-}
-
-nav {
-  background-color: black;
-  padding: 0.5em;
-}
-
+/* 1. FLEXBOX NAVIGATION WITH JUSTIFY-CONTENT */
 nav ul {
-  margin: 0;
-  padding: 0;
+  display: flex;
+  justify-content: space-around;   /* requirement #1 */
   list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #333;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  padding: 0.5em 1em;
+  padding: 15px 20px;
+  display: block;
 }
 
+/* 2. STICKY NAVIGATION BAR */
+nav {
+  position: sticky;   /* requirement #2 */
+  top: 0;
+  z-index: 1000;
+}
+
+/* 3. ARTICLE IMAGES FLOAT LEFT */
+.feature {
+  float: left;        /* requirement #3 */
+  margin: 0 15px 15px 0;
+  width: 40%;
+}
+
+/* 4. TWO-COLUMN LAYOUT FOR ARTICLE + ASIDE */
+.grid {
+  display: grid;                       /* requirement #4 */
+  grid-template-columns: 2fr 1fr;      /* article wider */
+  gap: 20px;
+  align-items: start;
+}
+
+/* 5. PHOTOGRAPHY SECTION — 2-COLUMN GRID WITH 1PX GAP */
 .photos {
+  display: grid;                       /* requirement #5 */
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.photos img {
+  width: 100%;
+  display: block;
+}
+
+/* OPTIONAL — MAKE PAGE LOOK NICER */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-.feature {
-  width: 200px;
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 20px;
+  background: #f4f4f4;
 }
