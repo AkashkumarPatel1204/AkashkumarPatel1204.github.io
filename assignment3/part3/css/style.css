@@ -1,7 +1,7 @@
-/* 1. FLEXBOX NAVIGATION WITH JUSTIFY-CONTENT */
+
 nav ul {
   display: flex;
-  justify-content: space-around;   /* requirement #1 */
+  justify-content: space-around;  
   list-style: none;
   padding: 0;
   margin: 0;
@@ -15,31 +15,30 @@ nav a {
   display: block;
 }
 
-/* 2. STICKY NAVIGATION BAR */
 nav {
-  position: sticky;   /* requirement #2 */
+  position: sticky; 
   top: 0;
   z-index: 1000;
 }
 
-/* 3. ARTICLE IMAGES FLOAT LEFT */
+
 .feature {
-  float: left;        /* requirement #3 */
+  float: left;        
   margin: 0 15px 15px 0;
   width: 40%;
 }
 
-/* 4. TWO-COLUMN LAYOUT FOR ARTICLE + ASIDE */
+
 .grid {
-  display: grid;                       /* requirement #4 */
-  grid-template-columns: 2fr 1fr;      /* article wider */
+  display: grid;                       
+  grid-template-columns: 2fr 1fr;      
   gap: 20px;
   align-items: start;
 }
 
-/* 5. PHOTOGRAPHY SECTION — 2-COLUMN GRID WITH 1PX GAP */
+
 .photos {
-  display: grid;                       /* requirement #5 */
+  display: grid;                       
   grid-template-columns: 1fr 1fr;
   gap: 1px;
   list-style: none;
@@ -52,7 +51,7 @@ nav {
   display: block;
 }
 
-/* OPTIONAL — MAKE PAGE LOOK NICER */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
