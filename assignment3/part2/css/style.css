@@ -1,35 +1,102 @@
-/* General setup */
+*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Oswald:wght@400;600&display=swap');
 
-* {
-  box-sizing: border-box;
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Merriweather", serif; 
+  line-height: 1.5;
+  letter-spacing: 0.03rem;
+  font-size: 1rem;
 }
 
-body {
-  margin: 0 auto;
-  padding: 0 20px;
-  min-width: 980px;
-  max-width: 1400px;
+
+
+h1, h2 {
+  font-family: "Oswald", sans-serif; 
+  letter-spacing: 0.08rem;
 }
 
-/* Layout */
-
-main {
-  display: grid;
-  grid-template-columns: 5fr 2fr 2fr;
-  gap: 40px;
-  padding: 20px 0;
-}
-
-/* header and footer */
-
-header {
-  border-bottom: 5px solid #aa6666;
-}
-
-footer {
-  border-top: 5px solid #aa6666;
-}
-
-footer p {
+h1 {
   text-align: center;
+  font-size: 2.2rem;
+  margin-top: 1rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0; 
+}
+
+
+section h2 + p {
+  text-indent: 2rem;
+}
+
+/
+
+a {
+  color: #004080; 
+  text-decoration: underline;
+  outline: none; 
+  position: relative;
+}
+
+
+a[href^="http"]:after {
+  content: "↗";
+  font-size: 0.7em;
+  margin-left: 4px;
+  position: relative;
+  top: -1px;
+}
+
+a:hover,
+a:focus {
+  color: #008000; 
+  text-decoration: none; 
+}
+
+
+
+ul, ol {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: square; 
+}
+
+
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+nav li {
+  margin-bottom: 0.5rem;
+}
+
+nav a {
+  display: block; 
+  background-color: #003366;
+  color: white;
+  padding: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.1rem;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background-color: #0055aa;
+  color: white;
+  text-decoration: none;
 }
