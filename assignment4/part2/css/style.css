@@ -23,7 +23,10 @@ h1 {
   left: 0;
   width: 640px;
   height: 480px;
+  background-color: rgba(0,0,0,0);
+  pointer-events: none;
 }
+
 
 button {
   background: rgb(150 150 150 / 0.6);
@@ -33,6 +36,7 @@ button {
   top: 2px;
   left: 2px;
 }
+
 
 button:hover,
 button:focus {
