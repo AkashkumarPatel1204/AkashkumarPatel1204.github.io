@@ -47,16 +47,34 @@ function returnRandomStoryString() {
 generateBtn.addEventListener("click", generateStory);
 
 function generateStory() {
+  // Step 1: Create newStory
+  let newStory = storyText;
+
+  // Step 2: Random items
+  const xItem = randomValueFromArray(insertX);
+  const yItem = randomValueFromArray(insertY);
+  const zItem = randomValueFromArray(insertZ);
+
+  // Step 3: Replace placeholders
+  newStory = newStory.replaceAll(":insertx:", xItem);
+  newStory = newStory.replaceAll(":inserty:", yItem);
+  newStory = newStory.replaceAll(":insertz:", zItem);
+
+  // Step 4: Replace Bob with custom name
   if (customName.value !== "") {
-    const name = customName.value;
+    newStory = newStory.replaceAll("Bob", customName.value);
   }
 
+  // Step 5: UK conversions
   if (document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature = Math.round(94);
+    const weightInStones = Math.round(300 / 14);
+    const tempInCelsius = Math.round((94 - 32) * 5 / 9);
+
+    newStory = newStory.replaceAll("300 pounds", `${weightInStones} stone`);
+    newStory = newStory.replaceAll("94 fahrenheit", `${tempInCelsius} centigrade`);
   }
 
-  // TODO: replace "" with the correct expression
-  story.textContent = "";
+  // Step 6: Output story
+  story.textContent = newStory;
   story.style.visibility = "visible";
 }
