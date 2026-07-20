@@ -44,11 +44,13 @@ button:focus {
   background-color: black;
 }
 
-.thumb-bar {
-  display: flex;
-  gap: 2px;
-  cursor: pointer;
+.thumb-bar img {
+  width: 100px;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
+
 
 .thumb-bar img {
   display: block;
