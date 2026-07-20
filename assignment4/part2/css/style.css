@@ -23,10 +23,7 @@ h1 {
   left: 0;
   width: 640px;
   height: 480px;
-  background-color: rgba(0,0,0,0);
-  pointer-events: none;
 }
-
 
 button {
   background: rgb(150 150 150 / 0.6);
@@ -37,20 +34,17 @@ button {
   left: 2px;
 }
 
-
 button:hover,
 button:focus {
   color: rgb(150 150 150 / 1);
   background-color: black;
 }
 
-.thumb-bar img {
-  width: 100px;
-  height: auto;
-  display: block;
-  object-fit: cover;
+.thumb-bar {
+  display: flex;
+  gap: 2px;
+  cursor: pointer;
 }
-
 
 .thumb-bar img {
   display: block;
