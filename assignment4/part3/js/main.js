@@ -107,15 +107,6 @@ class EvilCircle extends Shape {
 	}
 }
 
-// Test Ball
-
-const testBall = new Ball(50, 100, 4, 4, "blue", 10);
-
-testBall.x;
-testBall.size;
-testBall.color;
-testBall.draw();
-
 // Balls array
 
 
@@ -124,7 +115,7 @@ const Balls = [];
 
 while (Balls.length < 25) {
   const size = random(10, 20);
-  const Ball = new Ball(
+  const ballobj = new Ball(
     // Ball position always drawn at least one Ball width
     // away from the edge of the canvas, to avoid drawing errors
     random(0 + size, width - size),
@@ -135,19 +126,18 @@ while (Balls.length < 25) {
     size,
   );
 
-  Balls.push(Ball);
+  Balls.push(ballobj);
 }
 
 
 // loop
 
-let evil;
+let evil = new EvilCircle(random(0, width), random(0,height));;
 
 function loop() {
   ctx.fillStyle = "rgb(0 0 0 / 25%)";
   ctx.fillRect(0, 0, width, height);
   
-  evil = new EvilCircle(random(0, width), random(0,height));
   
   evil.draw();
   evil.checkBounds();
