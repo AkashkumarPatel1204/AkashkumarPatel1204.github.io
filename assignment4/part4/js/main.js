@@ -1,15 +1,15 @@
 // canvas setup
-const canvas = document.querySelector(:canvas");
+const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-functiona random(min, max) {
+function random(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 function randomRGB() {
-return `rgb($random(0,255)}, ${random(0,255)}, ${random(0,255)})`;
+return `rgb(${random(0,255)}, ${random(0,255)}, ${random(0,255)})`;
 }
 
 // parent shape class
@@ -73,7 +73,7 @@ class EvilCircle extends Shape {
 	draw() {
 		ctx.beginPath();
 		ctx.strokeStyle = this.color;
-		ctx.linewidth = 3;
+		ctx.lineWidth = 3;
 		ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
 		ctx.stroke();
 	}
@@ -122,16 +122,16 @@ let evil = new EvilCircle(100, 100);
 window.addEventListener("keydown", (e) => {
   switch (e.key) {
     case "a":
-      this.x -= evil.velX;
+      evil.x -= evil.velX;
       break;
     case "d":
-      this.x += evil.velX;
+      evil.x += evil.velX;
       break;
     case "w":
-      this.y -= evil.velY;
+      evil.y -= evil.velY;
       break;
     case "s":
-      this.y += evil.velY;
+      evil.y += evil.velY;
       break;
   }
 });
@@ -152,7 +152,7 @@ function loop() {
 	
 	// create and display evilcircle
 	evil.draw();
-	evil.chekBounds();
+	evil.checkBounds();
 	evil.collisionDetect();
 	
 	requestAnimationFrame(loop);
