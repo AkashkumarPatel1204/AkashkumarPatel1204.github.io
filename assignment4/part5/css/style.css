@@ -79,6 +79,9 @@ textarea {
 
 .separator {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .separator label {
@@ -91,6 +94,18 @@ textarea {
   padding: 5px;
 }
 
+.horizontal-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.horizontal-list label {
+	display: flex;
+	align-items: center;
+	white-space: nowrap;
+}
+
 button {
   padding: 10px 20px;
   border-radius: 10px;
@@ -99,6 +114,7 @@ button {
   width: 50%;
   margin: 0 auto;
   display: block;
+  margin-top: 30px;
 }
 
 button:hover,
