@@ -1,18 +1,36 @@
 // functionality for showing/hiding the comments section
+document.addEventListener("DOMContentLoaded", () => {
 
 const showHideBtn = document.querySelector('.show-hide');
 const commentWrapper = document.querySelector('.comment-wrapper');
 
 commentWrapper.style.display = 'none';
+showHideBtn.setAttribute('aria-expanded', 'false');
+showHideBtn.setAttribute('aria-controls', 'comments-section');
 
+// mouse click
 showHideBtn.onclick = function() {
-  let showHideText = showHideBtn.textContent;
-  if(showHideText === 'Show comments') {
-    showHideBtn.textContent = 'Hide comments';
+	toggleComments();
+};
+
+// keyboard activation
+showHideBtn.addEventListener('keydown', function (e) {
+	if (e.key === 'Enter' || e.key=== ' ') {
+		e.preventDefault();
+		toggleComments();
+	}
+});
+function toggleComments() {
+	const isHidden = commentWrapper.style.display === 'none';
+	
+  if (isHidden) {
+	showHideBtn.textContent = 'Hide comments';
     commentWrapper.style.display = 'block';
+	showHideBtn.setAttribute('aria-expanded', 'true');
   } else {
     showHideBtn.textContent = 'Show comments';
     commentWrapper.style.display = 'none';
+	showHideBtn.setAttribute('aria-expanded', 'false');
   }
 };
 
@@ -32,8 +50,12 @@ function submitComment() {
   const listItem = document.createElement('li');
   const namePara = document.createElement('p');
   const commentPara = document.createElement('p');
-  const nameValue = nameField.value;
-  const commentValue = commentField.value;
+  const nameValue = nameField.value.trim();
+  const commentValue = commentField.value.trim();
+  
+  if (!nameValue || !commentValue) {
+	  return;
+  }
 
   namePara.textContent = nameValue;
   commentPara.textContent = commentValue;
@@ -45,3 +67,4 @@ function submitComment() {
   nameField.value = '';
   commentField.value = '';
 }
+});
